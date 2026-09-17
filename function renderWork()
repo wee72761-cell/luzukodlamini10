@@ -1273,7 +1273,6 @@
     // =====================================================
     // WORK RENDER
     // =====================================================
-
     function renderWork() {
 
       const grid =
@@ -1285,76 +1284,20 @@
       grid.innerHTML =
         workData.map(item => `
 
-          <div class="group relative">
+          <div class="group">
 
-            <div
-              class="aspect-[16/13] overflow-hidden rounded-3xl relative cursor-pointer"
-              onclick="openGallery('${item.id}','work')"
-            >
+            <div class="aspect-[16/13] overflow-hidden rounded-3xl relative mb-6">
 
               <img
                 src="${esc(item.image)}"
                 alt="${esc(item.title)}"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
+                class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
               />
-
-
-              <div
-                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
-              >
-
-                <span
-                  class="flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-white"
-                >
-
-                  <i
-                    data-lucide="images"
-                    class="w-5 h-5"
-                  ></i>
-
-                  View Gallery (${item.gallery.length})
-
-                </span>
-
-              </div>
-
-
-              <div
-                class="admin-controls absolute top-4 right-4 flex-col gap-2"
-              >
-
-                <button
-                  onclick="event.stopPropagation(); editItem('work','${item.id}')"
-                  class="p-2 bg-white text-black rounded-full hover:bg-accent transition-colors"
-                  title="Edit"
-                >
-                  <i data-lucide="pencil" class="w-4 h-4"></i>
-                </button>
-
-
-                <button
-                  onclick="event.stopPropagation(); openGallery('${item.id}','work')"
-                  class="p-2 bg-accent text-black rounded-full hover:bg-white transition-colors"
-                  title="Manage Images"
-                >
-                  <i data-lucide="settings" class="w-4 h-4"></i>
-                </button>
-
-
-                <button
-                  onclick="event.stopPropagation(); deleteItem('work','${item.id}')"
-                  class="p-2 bg-red-500/80 text-white rounded-full hover:bg-red-500 transition-colors"
-                  title="Delete"
-                >
-                  <i data-lucide="trash-2" class="w-4 h-4"></i>
-                </button>
-
-              </div>
 
             </div>
 
 
-            <div class="mt-6 flex justify-between">
+            <div class="flex justify-between items-start">
 
               <div>
 
@@ -1369,7 +1312,7 @@
               </div>
 
 
-              <span class="text-white/40 self-end">
+              <span class="text-white/40">
                 ${esc(item.year)}
               </span>
 
@@ -1385,8 +1328,7 @@
       lucide.createIcons();
 
     }
-
-
+    
     // =====================================================
     // APP RENDER
     // =====================================================
