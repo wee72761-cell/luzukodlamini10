@@ -1101,11 +1101,11 @@
 
     const ADMIN_PASS = 'Luzuko2026!';
 
-    const STORE = {
-      work: 'ld_work_v4',
-      apps: 'ld_apps_v4',
-      profile: 'ld_profile_v4',
-      admin: 'ld_admin_v4'
+        const STORE = {
+      work: 'ld_work_v6',
+      apps: 'ld_apps_v6',
+      profile: 'ld_profile_v6',
+      admin: 'ld_admin_v6'
     };
 
 
